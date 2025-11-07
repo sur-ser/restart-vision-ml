@@ -1,5 +1,0 @@
-Bottom nav bar
-Document
-Receipt
-Screenshot
-Top status bar
