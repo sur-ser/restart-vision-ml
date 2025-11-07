@@ -17,7 +17,6 @@ output/
 *.pt
 *.bin
 *.tflite
-!/.idea/
-!/models/
-!/images/
 images/
+.idea/
+*.txt
