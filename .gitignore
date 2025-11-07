@@ -1,0 +1,23 @@
+# node
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# cache
+.tmp/
+.temp/
+coverage/
+
+# models / data / outputs
+models/
+data/
+output/
+*.onnx
+*.pt
+*.bin
+*.tflite
+!/.idea/
+!/models/
+!/images/
+images/

@@ -1,0 +1,63 @@
+{
+  "name": "restart-vision-ml",
+  "version": "0.1.0",
+  "description": "Document (receipt/document/screenshot) detection with YOLOv8 ONNX + post-refine pipeline.",
+  "type": "module",
+  "private": true,
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sur-ser/restart-vision-ml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sur-ser/restart-vision-ml/issues"
+  },
+  "homepage": "https://github.com/sur-ser/restart-vision-ml#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.10"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier -w \"src/**/*.{ts,md,json}\"",
+    "prepare": "npm run build",
+    "ex:one":   "tsx examples/analyze-one.ts images/687ba24bc34b1.jpg",
+    "ex:batch": "tsx examples/batch-analyze.ts images",
+    "ex:raw":   "tsx examples/raw-detect.ts images/687ba24bc34b1.jpg",
+    "ex:skew":  "tsx examples/skew-and-deskew.ts images/processed/deskewed-crop-687ba24bc34b1.jpg"
+  },
+  "keywords": [
+    "onnx",
+    "yolo",
+    "document-detection",
+    "ocr-prep",
+    "computer-vision"
+  ],
+  "author": "",
+  "dependencies": {
+    "onnxruntime-node": "^1.23.2",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.16.2",
+    "typescript": "^5.6.3"
+  }
+}
